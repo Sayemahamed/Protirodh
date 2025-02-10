@@ -1,5 +1,5 @@
 django
-django-allauth[socialaccount]
+django-allauth
 django-browser-reload
 ruff
 pillow
