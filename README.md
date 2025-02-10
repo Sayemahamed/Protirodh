@@ -189,7 +189,8 @@ This Repository is the official repository of Team IIUC_Four-Stack Developers fo
 ## Contact Us:
 
 **IIUC_Four-Stack Developers**
-Sayem Ahamed: [Email](mailto:c221020@ugrad.iiuc.ac.bd) [Linked In](https://www.linkedin.com/in/sayem-ahamed-47b890242/)
-Mir Tarhimul Quader: [Email](mailto:c221017@ugrad.iiuc.ac.bd) [Linked In](https://www.linkedin.com/in/tarhimul/)
-Mahamudul Hasan [Email](mailto:c221032@ugrad.iiuc.ac.bd) [Linked In](https://www.linkedin.com/in/mohammad-mahamudul-hasan-66931b223/)
-Turja Dutta [Email](mailto:c221026@ugrad.iiuc.ac.bd) [Linked In](https://www.linkedin.com/in/duttaturja/)
+
+Sayem Ahamed: [Email](mailto:c221020@ugrad.iiuc.ac.bd) [Linked In](https://www.linkedin.com/in/sayem-ahamed-47b890242/) <br>
+Mir Tarhimul Quader: [Email](mailto:c221017@ugrad.iiuc.ac.bd) [Linked In](https://www.linkedin.com/in/tarhimul/) <br>
+Mahamudul Hasan [Email](mailto:c221032@ugrad.iiuc.ac.bd) [Linked In](https://www.linkedin.com/in/mohammad-mahamudul-hasan-66931b223/) <br>
+Turja Dutta [Email](mailto:c221026@ugrad.iiuc.ac.bd) [Linked In](https://www.linkedin.com/in/duttaturja/) <br>
