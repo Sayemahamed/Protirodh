@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-6 bg-background">
+  <div class="bg-card p-6 rounded-md shadow border border-border">
+    <!-- Post Title -->
+    <h1 class="text-3xl font-bold text-copy-primary mb-4">{{ post.title }}</h1>
+
+    <!-- Post Content -->
+    <p class="text-copy-primary mb-4">
+      {{ post.content }}
+    </p>
+
+    <!-- Uploaded Images -->
+    {% if post.images.all %}
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mb-4">
+        {% for image in post.images.all %}
+          <img
+            src="{{ image.url }}"
+            alt="Image for {{ post.title }}"
+            class="w-full h-48 object-cover rounded"
+          />
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <!-- Upvotes and Downvotes -->
+    <div class="flex items-center space-x-4 mb-6 text-copy-secondary">
+      <span>Upvotes: {{ post.upvotes }}</span>
+      <span>Downvotes: {{ post.downvotes }}</span>
+    </div>
+
+    <!-- Comments Section -->
+    <div>
+      <h2 class="text-2xl font-semibold text-copy-primary mb-3">Comments</h2>
+      {% if post.comments.all %}
+        <ul class="space-y-4">
+          {% for comment in post.comments.all %}
+            <li class="p-4 bg-background border border-border rounded">
+              <p class="text-copy-primary">{{ comment.text }}</p>
+              <p class="text-copy-secondary text-sm mt-1">
+                Posted by {{ comment.user.username }} on {{ comment.created_at|date:"M d, Y" }}
+              </p>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="text-copy-secondary">No comments yet.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock content %}

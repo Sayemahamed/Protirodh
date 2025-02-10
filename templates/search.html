@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-6">
+  <div class="bg-card p-6 rounded-md shadow border border-border">
+    <!-- Page Title -->
+    <h1 class="text-3xl font-bold text-copy-primary mb-6 text-center">Search Posts</h1>
+    
+    <!-- Search Form -->
+    <form method="GET" action="{% url 'post_search' %}">
+      <!-- Big Search Bar -->
+      <div class="relative">
+        <input
+          type="text"
+          name="q"
+          class="w-full p-2 pr-20 border border-border rounded-lg text-xl bg-card focus:outline-none focus:ring-2 focus:ring-cta"
+          placeholder="Search posts by title..."
+          value="{{ request.GET.q }}"
+        />
+        <button
+          type="submit"
+          class="absolute right-0 top-0 h-full mt-4 mr-4 bg-cta hover:bg-cta-active text-cta-text px-4 py-2 rounded-md"
+        >
+          Search
+        </button>
+      </div>
+      
+      <!-- Expandable Filters Section -->
+      <details class="mt-6">
+        <summary class="cursor-pointer inline-block bg-cta hover:bg-cta-active text-cta-text px-4 py-2 rounded-md">
+          Filters
+        </summary>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Sort By Filter -->
+          <div>
+            <label for="sort" class="block text-copy-primary font-medium mb-1">Sort By</label>
+            <select
+              id="sort"
+              name="sort"
+              class="w-full p-2 border border-border rounded focus:outline-none focus:ring-2 focus:ring-cta"
+            >
+              <option value="relevance" {% if request.GET.sort == "relevance" %}selected{% endif %}>Relevance</option>
+              <option value="upvotes" {% if request.GET.sort == "upvotes" %}selected{% endif %}>Highest Upvotes</option>
+              <option value="recent" {% if request.GET.sort == "recent" %}selected{% endif %}>Most Recent</option>
+            </select>
+          </div>
+          <!-- Minimum Upvotes Filter -->
+          <div>
+            <label for="min_upvotes" class="block text-copy-primary font-medium mb-1">Minimum Upvotes</label>
+            <input
+              type="number"
+              id="min_upvotes"
+              name="min_upvotes"
+              class="w-full p-2 border border-border rounded focus:outline-none focus:ring-2 focus:ring-cta"
+              placeholder="0"
+              min="0"
+              value="{{ request.GET.min_upvotes }}"
+            />
+          </div>
+        </div>
+        <div class="mt-4">
+          <button
+            type="submit"
+            class="px-4 py-2 bg-cta hover:bg-cta-active text-cta-text rounded-md"
+          >
+            Apply Filters
+          </button>
+        </div>
+      </details>
+    </form>
+  </div>
+</div>
+{% endblock content %}

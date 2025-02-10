@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Tailwind CSS (if not built into your static/style.css) -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <link rel="stylesheet" href="static/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/style.css">
   <title>Protirodh Dashboard</title>
 </head>
 <body class="theme-github-light dark:theme-github-dark bg-[rgb(var(--background))] text-[rgb(var(--copy-primary))]">
@@ -17,14 +18,42 @@
         <nav>
           <ul>
             <li class="mb-2">
-              <a href="#" class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">Home</a>
+              <a href="#" class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
+                <i class="fas fa-home text-xl"></i>
+                <span>Home</span>
+              </a>
             </li>
             <li class="mb-2">
-              <a href="#" class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">About</a>
+              <a href="#" class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
+                <i class="fas fa-search text-xl"></i>
+                <span>Search</span>
+              </a>
             </li>
-            <li>
-              <a href="#" class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">Contact</a>
+            <li class="mb-2">
+              <a href="#" class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
+                <i class="fas fa-bell text-xl"></i>
+                <span>Notifications</span>
+              </a>
             </li>
+            <li class="mb-2">
+              <a href="#" class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
+                <i class="fas fa-users text-xl"></i>
+                <span>Followers</span>
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
+                  <i class="fas fa-pencil-alt text-xl" aria-hidden="true"></i>
+                  <span>My Posts</span>
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
+                <i class="fas fa-user text-xl"></i>
+                <span>Profile</span>
+              </a>
+            </li>
+
           </ul>
           <!-- Theme Selector -->
           <select id="theme-selector" class="mt-4 p-2 border rounded bg-[rgb(var(--card))] text-[rgb(var(--copy-primary))]">
@@ -50,10 +79,7 @@
 
       <main class="p-6 overflow-auto">
         {% block content %}
-        <h2 class="text-2xl font-bold mb-4">Welcome</h2>
-        <p class="text-[rgb(var(--copy-secondary))]">
-          This is your main content area. Adjust the content and layout as needed.
-        </p>
+        
         {% endblock %}
       </main>
     </div>
@@ -85,6 +111,6 @@
   </script>
 
   <!-- Theme Management Script -->
-  <script src="static/theme.js"></script>
+  <script src="/static/theme.js"></script>
 </body>
 </html>

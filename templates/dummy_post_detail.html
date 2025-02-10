@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-6 bg-background">
+  <div class="bg-card p-6 rounded-md shadow border border-border">
+    <!-- Post Title -->
+    <h1 class="text-3xl font-bold text-copy-primary mb-4">Dummy Post Title</h1>
+    
+    <!-- Post Content -->
+    <p class="text-copy-primary mb-4">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada, nisi at suscipit ultricies, nibh justo gravida urna, in faucibus dui tortor a urna. Nulla facilisi. Integer ac ante sed odio ornare fermentum. Suspendisse potenti. Curabitur venenatis, massa in auctor tincidunt, urna nunc efficitur nisl, sed condimentum magna risus at sapien.
+    </p>
+    
+    <!-- Uploaded Images -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mb-4">
+      <img
+        src="{% static 'images/dummy1.jpg' %}"
+        alt="Dummy Image 1"
+        class="w-full h-48 object-cover rounded"
+      />
+      <img
+        src="{% static 'images/dummy2.jpg' %}"
+        alt="Dummy Image 2"
+        class="w-full h-48 object-cover rounded"
+      />
+      <img
+        src="{% static 'images/dummy3.jpg' %}"
+        alt="Dummy Image 3"
+        class="w-full h-48 object-cover rounded"
+      />
+      <img
+        src="{% static 'images/dummy4.jpg' %}"
+        alt="Dummy Image 4"
+        class="w-full h-48 object-cover rounded"
+      />
+    </div>
+    
+    <!-- Upvotes and Downvotes -->
+    <div class="flex items-center space-x-4 mb-6 text-copy-secondary">
+      <span>Upvotes: 150</span>
+      <span>Downvotes: 30</span>
+    </div>
+    
+    <!-- Comments Section -->
+    <div>
+      <h2 class="text-2xl font-semibold text-copy-primary mb-3">Comments</h2>
+      <ul class="space-y-4">
+        <li class="p-4 bg-background border border-border rounded">
+          <p class="text-copy-primary">
+            Great post! Really enjoyed reading it.
+          </p>
+          <p class="text-copy-secondary text-sm mt-1">
+            Posted by user1 on Jan 1, 2025
+          </p>
+        </li>
+        <li class="p-4 bg-background border border-border rounded">
+          <p class="text-copy-primary">
+            I agree, very insightful!
+          </p>
+          <p class="text-copy-secondary text-sm mt-1">
+            Posted by user2 on Jan 2, 2025
+          </p>
+        </li>
+        <li class="p-4 bg-background border border-border rounded">
+          <p class="text-copy-primary">
+            Thanks for sharing your thoughts.
+          </p>
+          <p class="text-copy-secondary text-sm mt-1">
+            Posted by user3 on Jan 3, 2025
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock content %}

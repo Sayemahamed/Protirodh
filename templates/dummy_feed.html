@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-6">
+  <!-- Search Bar -->
+  <form action="#" method="GET" class="mb-6">
+    <input
+      type="text"
+      name="search"
+      placeholder="Search posts..."
+      class="w-full p-2 rounded-md border border-border focus:outline-none focus:ring-2 focus:ring-cta"
+    />
+  </form>
+
+  <!-- Dummy Post Card -->
+  <div class="bg-card p-4 rounded-md shadow mb-6 border border-border">
+    <!-- Post Title -->
+    <h2 class="text-xl font-bold text-copy-primary mb-2">Dummy Post Title</h2>
+
+    <!-- Profile Info: Profile Pic, Profile Name, When Posted -->
+    <div class="flex items-center space-x-2 mb-2">
+      <img
+        src="{% static 'images/dummy-profile.jpg' %}"
+        alt="Dummy Profile"
+        class="w-10 h-10 rounded-full"
+      />
+      <div class="flex items-center space-x-1">
+        <span class="text-copy-primary font-medium">Dummy User</span>
+        <span class="text-copy-secondary">&bull;</span>
+        <span class="text-copy-secondary text-sm">Jan 1, 2025</span>
+      </div>
+    </div>
+
+    <!-- Post Content -->
+    <div class="text-copy-primary">
+      <p class="line-clamp-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada, nisi at suscipit ultricies, nibh justo gravida urna, in faucibus dui tortor a urna. Nulla facilisi. Integer ac ante sed odio ornare fermentum.
+      </p>
+      <a href="#" class="text-cta hover:underline">
+        See more
+      </a>
+    </div>
+
+    <!-- Uploaded Images (Showing four dummy images) -->
+    <div class="mt-4">
+      <div class="grid grid-cols-2 gap-2">
+        <img
+          src="{% static 'images/dummy1.jpg' %}"
+          alt="Uploaded image 1"
+          class="w-full h-48 object-cover rounded"
+        />
+        <img
+          src="{% static 'images/dummy2.jpg' %}"
+          alt="Uploaded image 2"
+          class="w-full h-48 object-cover rounded"
+        />
+        <img
+          src="{% static 'images/dummy3.jpg' %}"
+          alt="Uploaded image 3"
+          class="w-full h-48 object-cover rounded"
+        />
+        <img
+          src="{% static 'images/dummy4.jpg' %}"
+          alt="Uploaded image 4"
+          class="w-full h-48 object-cover rounded"
+        />
+      </div>
+    </div>
+
+    <!-- View Details Button -->
+    <div class="mt-4">
+      <a
+        href="{% url 'detail' 1 %}"
+        class="inline-block px-4 py-2 bg-cta hover:bg-cta-active text-cta-text rounded-md"
+      >
+        View Details
+      </a>
+    </div>
+
+    <!-- Post Interactions -->
+    <div class="flex items-center space-x-4 mt-4 text-copy-secondary">
+      <span>Upvotes: 123</span>
+      <span>Downvotes: 45</span>
+      <span>Comments: 6</span>
+    </div>
+  </div>
+</div>
+{% endblock content %}
