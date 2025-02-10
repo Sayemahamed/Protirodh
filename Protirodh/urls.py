@@ -14,10 +14,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
-from django.urls import path
-from Report import views
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from Report.views import home
+
 urlpatterns = [
+    path('', home, name='home'),
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-]
+    path('accounts/', include('allauth.urls')),
+    path("__reload__",include("django_browser_reload.urls")),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+handler404 = 'Protirodh.views.handler404'
+handler500 = 'Protirodh.views.handler500'
+handler403 = 'Protirodh.views.handler403'
