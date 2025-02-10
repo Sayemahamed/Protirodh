@@ -1,3 +1,98 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ===================================== */
+/*         Theme Variable Setup          */
+/* ===================================== */
+
+/* Default Light Theme Variables */
+:root {
+  --background: 255, 255, 255;      /* White */
+  --card: 246, 248, 250;            /* Gray-50 */
+  --border: 208, 215, 222;          /* Gray-200 */
+  --copy-primary: 36, 41, 47;       /* Gray-900 */
+  --copy-secondary: 87, 96, 106;    /* Gray-600 */
+  --cta: 31, 111, 235;             /* Blue-600 */
+  --cta-active: 21, 101, 192;       /* Blue-700 */
+  --cta-text: 255, 255, 255;        /* White */
+  --accent: 3, 102, 214;            /* Blue-500 */
+}
+
+/* Dark Theme Variables */
+/* Activate by adding the "dark" class on the root element */
+.dark {
+  --background: 13, 17, 23;         /* Dark background */
+  --card: 22, 27, 34;               /* Card background */
+  --border: 48, 54, 61;             /* Border color */
+  --copy-primary: 230, 237, 243;    /* Light text */
+  --copy-secondary: 139, 148, 158;  /* Gray text */
+  --cta: 47, 129, 247;             /* Blue */
+  --cta-active: 88, 166, 255;       /* Light blue */
+  --cta-text: 255, 255, 255;        /* White */
+  --accent: 47, 129, 247;           /* Blue accent */
+}
+
+/* ===================================== */
+/*         Utility Classes               */
+/* ===================================== */
+
+@layer utilities {
+  .bg-background {
+    background-color: rgb(var(--background));
+  }
+  .bg-card {
+    background-color: rgb(var(--card));
+  }
+  .border-border {
+    border-color: rgb(var(--border));
+  }
+  .text-copy-primary {
+    color: rgb(var(--copy-primary));
+  }
+  .text-copy-secondary {
+    color: rgb(var(--copy-secondary));
+  }
+  .bg-cta {
+    background-color: rgb(var(--cta));
+  }
+  .bg-cta-active {
+    background-color: rgb(var(--cta-active));
+  }
+  .text-cta-text {
+    color: rgb(var(--cta-text));
+  }
+  .border-accent {
+    border-color: rgb(var(--accent));
+  }
+}
+
+/* ===================================== */
+/*         Component Styles              */
+/* ===================================== */
+
+@layer components {
+  .nav-link {
+    @apply px-3 py-2 rounded-md transition-all duration-200 text-copy-primary;
+  }
+  .nav-link:hover {
+    @apply text-copy-primary;
+  }
+  .nav-link.active {
+    @apply text-copy-primary font-medium;
+  }
+  .mobile-menu-button {
+    @apply inline-flex items-center justify-center p-2 rounded-md text-copy-secondary transition-colors duration-200;
+  }
+  .mobile-menu-button:hover {
+    @apply text-copy-primary bg-background;
+  }
+  .mobile-menu-button:focus {
+    @apply outline-none;
+    /* Directly apply the border color as Tailwind's @apply cannot wrap CSS functions */
+    border-color: rgb(var(--accent));
+  }
+  .mobile-menu {
+    @apply md:hidden;
+  }
+}
