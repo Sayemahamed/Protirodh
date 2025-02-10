@@ -17,6 +17,10 @@ module.exports = {
         'cta-text': "rgb(var(--cta-text))",
         accent: "rgb(var(--accent))",
       },
+      fontFamily: {
+        logo: ['"BenSen Handwriting"', 'cursive'],
+      },
+
     },
   },
   plugins: [],
