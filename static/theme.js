@@ -3,7 +3,7 @@
 /* ===================================== */
 
 /**
- * Applies the given theme by toggling the 'dark' class.
+ * Applies the given theme by toggling the 'dark' class on the root element.
  * @param {string} theme - Either "light" or "dark".
  */
 function applyTheme(theme) {
@@ -15,7 +15,7 @@ function applyTheme(theme) {
 }
 
 /**
- * Synchronizes the value of both theme selectors (if present) with the current theme.
+ * Synchronizes the value of theme selectors (if present) with the current theme.
  * @param {string} theme - The theme value ("light" or "dark").
  */
 function syncThemeSelectors(theme) {
@@ -59,7 +59,6 @@ function handleThemeChange(event) {
 /* ===================================== */
 /*          DOMContentLoaded             */
 /* ===================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize theme on page load
   initializeTheme();
@@ -73,15 +72,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (mobileThemeSelector) {
     mobileThemeSelector.addEventListener('change', handleThemeChange);
-  }
-
-  // Mobile menu toggle
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
   }
 });
