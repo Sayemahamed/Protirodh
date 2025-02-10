@@ -1,7 +1,8 @@
 # Protirodh
+
 ## A Crime Reporting and Community Verification Platform By Team IIUC_Four-Stack Developers
 
-A Django-based web application of a social media platform that enables users to report crimes in their area, attach multimedia evidence, and let the community verify the authenticity of these reports through voting and commenting. This project was built as a hackathon demo (NSU WebXtreme Hackathon 2025) within an 8-hour timeframe, featuring OTP-based user verification, dummy AI description generation, and robust community interactions.
+Protirodh is a crime reporting and community verification platform designed to enable users to report crimes in their area, attach supporting evidence (images/videos), and allow the community to verify the authenticity of reports through upvotes, downvotes, and comments. The platform incorporates AI-generated descriptions for crime scene images, advanced filtering and searching mechanisms, and a secure user authentication system.
 
 ## Table of Contents
 
@@ -11,8 +12,6 @@ A Django-based web application of a social media platform that enables users to 
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Configuration & Environment Variables](#configuration--environment-variables)
-- [Known Issues & Improvements](#known-issues--improvements)
-- [License](#license)
 
 ## Features
 
@@ -184,13 +183,13 @@ The project uses a custom user model (users.CustomUser) and local file storage. 
 Uploaded images and videos are stored in the media/ directory. Ensure that the MEDIA_ROOT and MEDIA_URL settings are correctly configured.
 
 ---
-This Repository is the official repository of Team IIUC_Four-Stack Developers for the NSU WebXtream Hackathon Co-powered by Programming Hero.
+This Repository is the official repository of Team **IIUC_Four-Stack Developers** for the **NSU WebXtream Hackathon** Co-powered by **Programming Hero**.
 
 ## Contact Us:
 
 **IIUC_Four-Stack Developers**
 
-Sayem Ahamed: [Email](mailto:c221020@ugrad.iiuc.ac.bd) [Linked In](https://www.linkedin.com/in/sayem-ahamed-47b890242/) <br>
-Mir Tarhimul Quader: [Email](mailto:c221017@ugrad.iiuc.ac.bd) [Linked In](https://www.linkedin.com/in/tarhimul/) <br>
-Mahamudul Hasan [Email](mailto:c221032@ugrad.iiuc.ac.bd) [Linked In](https://www.linkedin.com/in/mohammad-mahamudul-hasan-66931b223/) <br>
-Turja Dutta [Email](mailto:c221026@ugrad.iiuc.ac.bd) [Linked In](https://www.linkedin.com/in/duttaturja/) <br>
+**Sayem Ahamed:** [Email](mailto:c221020@ugrad.iiuc.ac.bd) | [LinkedIn](https://www.linkedin.com/in/sayem-ahamed-47b890242/)<br>
+**Mir Tarhimul Quader:** [Email](mailto:c221017@ugrad.iiuc.ac.bd) | [LinkedIn](https://www.linkedin.com/in/tarhimul/)<br>
+**Mahamudul Hasan:** [Email](mailto:c221032@ugrad.iiuc.ac.bd) | [LinkedIn](https://www.linkedin.com/in/mohammad-mahamudul-hasan-66931b223/)<br>
+**Turja Dutta:** [Email](mailto:c221026@ugrad.iiuc.ac.bd) | [LinkedIn](https://www.linkedin.com/in/duttaturja/)
