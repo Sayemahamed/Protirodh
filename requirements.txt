@@ -1,0 +1,5 @@
+django
+django-allauth[socialaccount]
+django-browser-reload
+ruff
+pillow
