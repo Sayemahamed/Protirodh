@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="flex flex-col md:flex-row min-h-screen">
+    <nav class="bg-background md:w-1/4 md:min-h-screen p-4">
+        <h1 class="text-xl font-extrabold">Protirodh</h1>
+        <ul class="mt-4 space-y-2">
+            <li><a href="#" class="block p-2 text-copy-primary hover:bg-accent">Home</a></li>
+            <li><a href="#" class="block p-2 text-copy-primary hover:bg-accent">About</a></li>
+            <li><a href="#" class="block p-2 text-copy-primary hover:bg-accent">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="flex-1 bg-card p-4">
+
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
