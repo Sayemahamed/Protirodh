@@ -45,16 +45,14 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
-    "allauth.socialaccount",
-    "allauth.socialaccount.providers.google",
-    "allauth.socialaccount.providers.facebook",
+    'allauth.mfa',
     "django_browser_reload",
 ]
-
 LOCAL_APPS = [
     "Users",
     "Report",
 ]
+MFA_SUPPORTED_TYPES = ["totp", "webauthn"]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -91,7 +89,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Protirodh.wsgi.application'
 AUTHENTICATION_BACKENDS = [
-    # "django.contrib.auth.backends.ModelBackend",
+    "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
@@ -136,6 +134,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# Use an app password, NOT your Gmail password
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
