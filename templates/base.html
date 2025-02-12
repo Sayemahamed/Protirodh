@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Tailwind CSS (if not built into your static/style.css) -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="static/style.css">
   <title>Protirodh Dashboard</title>
   <style>
     @import url('https://fonts.maateen.me/bensen-handwriting/font.css');
@@ -25,43 +25,37 @@
         <nav>
           <ul>
             <li class="mb-2">
-              <a href="#"
-                 class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
+              <a href="#" class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
                 <i class="fas fa-home text-xl"></i>
                 <span>Home</span>
               </a>
             </li>
             <li class="mb-2">
-              <a href="#"
-                 class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
+              <a href="#" class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
                 <i class="fas fa-search text-xl"></i>
                 <span>Search</span>
               </a>
             </li>
             <li class="mb-2">
-              <a href="#"
-                 class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
+              <a href="#" class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
                 <i class="fas fa-bell text-xl"></i>
                 <span>Notifications</span>
               </a>
             </li>
             <li class="mb-2">
-              <a href="#"
-                 class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
+              <a href="#" class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
                 <i class="fas fa-users text-xl"></i>
                 <span>Followers</span>
               </a>
             </li>
             <li class="mb-2">
-              <a href="#"
-                 class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
-                <i class="fas fa-pencil-alt text-xl" aria-hidden="true"></i>
-                <span>My Posts</span>
+              <a href="#" class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
+                  <i class="fas fa-pencil-alt text-xl" aria-hidden="true"></i>
+                  <span>My Posts</span>
               </a>
             </li>
             <li class="mb-2">
-              <a href="#"
-                 class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
+              <a href="#" class="block px-3 py-2 rounded hover:bg-[rgb(var(--accent))] hover:text-[rgb(var(--cta-text))]">
                 <i class="fas fa-user text-xl"></i>
                 <span>Profile</span>
               </a>
@@ -94,7 +88,7 @@
 
       <main class="p-6 overflow-auto">
         {% block content %}
-
+        
         {% endblock %}
       </main>
     </div>
