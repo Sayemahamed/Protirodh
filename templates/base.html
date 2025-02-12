@@ -1,21 +1,25 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Tailwind CSS (if not built into your static/style.css) -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="static/style.css">
   <title>Protirodh Dashboard</title>
   <style>
     @import url('https://fonts.maateen.me/bensen-handwriting/font.css');
   </style>
   {% block head %}{% endblock %}
 </head>
+
 <body class="theme-github-light dark:theme-github-dark bg-[rgb(var(--background))] text-[rgb(var(--copy-primary))]">
   <div class="relative h-screen flex">
     <!-- Sidebar -->
-    <aside id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-[rgb(var(--card))] border-r border-[rgb(var(--border))] transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50">
+    <aside id="sidebar"
+           class="fixed inset-y-0 left-0 w-64 bg-[rgb(var(--card))] border-r border-[rgb(var(--border))] transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50">
       <div class="p-4">
         <h2 class="text-2xl mb-4 font-logo">প্রতিরোধ</h2>
         <nav>
@@ -59,7 +63,8 @@
 
           </ul>
           <!-- Theme Selector -->
-          <select id="theme-selector" class="mt-4 p-2 border rounded bg-[rgb(var(--card))] text-[rgb(var(--copy-primary))]">
+          <select id="theme-selector"
+                  class="mt-4 p-2 border rounded bg-[rgb(var(--card))] text-[rgb(var(--copy-primary))]">
             <option value="light">Light Mode</option>
             <option value="dark">Dark Mode</option>
           </select>
@@ -73,7 +78,8 @@
     <!-- Main Content -->
     <div class="flex-1 flex flex-col md:ml-64">
       <!-- Header with Toggle Button (mobile only) -->
-      <header class="p-4 bg-[rgb(var(--card))] border-b border-[rgb(var(--border))] flex items-center justify-between md:hidden">
+      <header
+              class="p-4 bg-[rgb(var(--card))] border-b border-[rgb(var(--border))] flex items-center justify-between md:hidden">
         <h1 class="text-2xl font-logo">প্রতিরোধ</h1>
         <button id="toggleSidebar" class="bg-[rgb(var(--cta))] text-[rgb(var(--cta-text))] px-3 py-2 rounded">
           Menu
@@ -116,4 +122,5 @@
   <!-- Theme Management Script -->
   <script src="/static/theme.js"></script>
 </body>
+
 </html>

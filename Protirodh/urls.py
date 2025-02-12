@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 from Report.views import home
 from .views import bangladesh_heatmap,  user_profile
 
+app_name = 'Protirodh'
 urlpatterns = [
     path('', home, name='home'),
     path('heatmap/', bangladesh_heatmap, name='heatmap'),

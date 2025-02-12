@@ -1,8 +1,0 @@
-Hello,
-
-Thank you for signing up for Protirodh. Please confirm your email by clicking the link below:
-
-{{ activate_url }}
-
-Regards,
-Protirodh Team

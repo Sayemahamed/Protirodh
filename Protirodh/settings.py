@@ -170,7 +170,7 @@ DEFAULT_FROM_EMAIL = DEFAULT_FROM_EMAIL = "Protirodh mirtarhimul@gmail.com"
 
 
 
-ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_LOGIN_METHODS = {'email'}
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "optional"  # "optional" or "none" if you don’t require verification
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
