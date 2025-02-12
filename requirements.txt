@@ -1,5 +1,5 @@
 django
-django-allauth
+django-allauth[mfa]
 django-browser-reload
 ruff
 pillow

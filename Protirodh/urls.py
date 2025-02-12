@@ -26,13 +26,6 @@ urlpatterns = [
     path('', home, name='home'),
     path('heatmap/', bangladesh_heatmap, name='heatmap'),
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
-    # path('', views.home, name='home'),
-    path('', views.index, name='index'),
-    path('detail/<int:post_id>/', views.detail, name='detail'),
-    path('search/', views.search, name='search'),
-]
-=======
     path('accounts/', include('allauth.urls')),
     path("__reload__",include("django_browser_reload.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
@@ -43,4 +36,3 @@ if settings.DEBUG:
 handler404 = 'Protirodh.views.handler404'
 handler500 = 'Protirodh.views.handler500'
 handler403 = 'Protirodh.views.handler403'
->>>>>>> b0b7835095412daff5c2d0662c3d877a49334158
