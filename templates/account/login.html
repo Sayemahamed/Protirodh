@@ -1,4 +1,4 @@
-{% extends 'layouts/base.html' %} {% load static %} {% load account
+{% extends 'base.html' %} {% load static %} {% load account
 socialaccount %} {% block title %}Sign In{% endblock %} {% block content %}
 <div
   class="mt-12 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-background"
@@ -15,35 +15,7 @@ socialaccount %} {% block title %}Sign In{% endblock %} {% block content %}
       </p>
     </div>
 
-    {% get_providers as socialaccount_providers %} {% if socialaccount_providers
-    %}
-    <div class="flex flex-col space-y-3">
-      {% for provider in socialaccount_providers %}
-      <a
-        href="{% provider_login_url provider.id process='login' %}"
-        class="flex items-center justify-center px-4 py-2 border border-border rounded-md text-copy-primary hover:bg-background transition-colors"
-      >
-        <img
-          src="{% static 'images/'|add:provider.name|add:'.svg' %}"
-          alt="{{ provider.name }}"
-          class="h-5 w-5 mr-2"
-        />
-        Continue with {{ provider.name }}
-      </a>
-      {% endfor %}
-      <div class="relative my-4">
-        <div class="absolute inset-0 flex items-center">
-          <div class="w-full border-t border-border"></div>
-        </div>
-        <div class="relative flex justify-center text-sm">
-          <span class="px-2 bg-card text-copy-secondary"
-            >Or continue with email</span
-          >
-        </div>
-      </div>
-    </div>
-    {% endif %}
-
+    
     <form
       class="mt-8 space-y-6"
       method="POST"
