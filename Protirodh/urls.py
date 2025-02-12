@@ -20,9 +20,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from Report.views import home
+from .views import bangladesh_heatmap
 
 urlpatterns = [
     path('', home, name='home'),
+    path('heatmap/', bangladesh_heatmap, name='heatmap'),
     path('admin/', admin.site.urls),
 <<<<<<< HEAD
     # path('', views.home, name='home'),

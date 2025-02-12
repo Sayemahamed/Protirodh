@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Tailwind CSS (if not built into your static/style.css) -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="static/style.css">
   <title>Protirodh Dashboard</title>
   <style>
     @import url('https://fonts.maateen.me/bensen-handwriting/font.css');
   </style>
+  {% block head %}{% endblock %}
 </head>
 <body class="theme-github-light dark:theme-github-dark bg-[rgb(var(--background))] text-[rgb(var(--copy-primary))]">
   <div class="relative h-screen flex">
