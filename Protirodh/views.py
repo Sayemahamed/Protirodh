@@ -1,10 +1,11 @@
 import folium
 import json
 import pandas as pd
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from django.templatetags.static import static
 from django.http import HttpResponse
-
+from django.contrib.auth.models import User
+from Users.models import Profile
 
 def handler404(request, exception):
     print("404 handler called!")  # Debug print
@@ -19,6 +20,13 @@ def handler500(request, *args, **argv):
 def handler403(request, exception):
     print("403 handler called!")
     return render(request, '403.html', status=403)
+
+def user_profile(request, username):
+    user = get_object_or_404(User, username=username)
+    profile = get_object_or_404(Profile, user=user)
+    return render(request, 'demo-user.html', {'profile': profile})
+    
+    
 
 def bangladesh_heatmap(request):
     # Load Bangladesh District GeoJSON

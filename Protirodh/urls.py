@@ -20,13 +20,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from Report.views import home
-from .views import bangladesh_heatmap
+from .views import bangladesh_heatmap,  user_profile
 
 urlpatterns = [
     path('', home, name='home'),
     path('heatmap/', bangladesh_heatmap, name='heatmap'),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('user/<str:username>/', user_profile, name='user_profile'),
     path("__reload__",include("django_browser_reload.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
