@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Heatmap - Protirodh{% endblock %}
+{%block head %}
+<style>
+    /* Heatmap container styles */
+    .heatmap-container {
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    /* Ensure iframe does not inherit unwanted styles */
+    .heatmap-container iframe {
+        width: 100%;
+        height: 600px;
+        border: none;
+        border-radius: 8px;
+        /* background-color: rgb(var(--background)); */
+    }
+
+    /* Title styling */
+    .heatmap-title {
+        text-align: center;
+        color: rgb(var(--copy-primary));
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+</style>
+<script>
+    // Restore the theme mode on page load
+    document.addEventListener("DOMContentLoaded", function () {
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+        }
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="heatmap-container">
+    <h2 class="heatmap-title">Crime Heatmap by District</h2>
+    <iframe src="{{ map_path }}"></iframe>
+</div>
+
+{% endblock %}

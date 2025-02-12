@@ -10,8 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
+from dotenv import load_dotenv
 from pathlib import Path
 
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -37,7 +39,7 @@ DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
-    "django.contrib.sessions",
+    "django.contrib.sessions","django.contrib.sites",
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
@@ -91,7 +93,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Protirodh.wsgi.application'
 AUTHENTICATION_BACKENDS = [
-    # "django.contrib.auth.backends.ModelBackend",
+    "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
@@ -136,6 +138,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+SITE_ID = 1
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
@@ -150,6 +153,27 @@ MEDIA_ROOT = MEDIA_DIR
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
-LOGIN_REDIRECT_URL = '/'
 
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "mirtarhimul@gmail.com"
+EMAIL_HOST_PASSWORD = os.getenv('GMAIL_APP_PASSWORD')  # Use App Password from Google
+DEFAULT_FROM_EMAIL = DEFAULT_FROM_EMAIL = "Protirodh mirtarhimul@gmail.com"
+
+
+
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "optional"  # "optional" or "none" if you don’t require verification
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+
+
+LOGIN_REDIRECT_URL = "/"
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = "/accounts/login/"
+ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = "/"
+
+
+# print(os.getenv('GMAIL_APP_PASSWORD'))
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
