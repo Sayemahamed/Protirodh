@@ -26,6 +26,7 @@ urlpatterns = [
     path('', home, name='home'),
     path('heatmap/', bangladesh_heatmap, name='heatmap'),
     path('admin/', admin.site.urls),
+    path('reports/', include('Report.urls')),
     path('accounts/', include('allauth.urls')),
     path("__reload__",include("django_browser_reload.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

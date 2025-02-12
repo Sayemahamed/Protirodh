@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Report, Comment
+from .models import CrimeReport, Comment
 
-admin.site.register(Report)
+admin.site.register(CrimeReport)
 admin.site.register(Comment)
